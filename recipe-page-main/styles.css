@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-de-fundo: #F3E5D8;
+    --fundo-preparacao: #FFF7FC;
+    --marrom-subtitulo: #7B4B37;
+    --preto-titulo: #2F2B2A;
+    --cinza-texto: #615756;
+    --cinza-linha: #e0e0e067;
+    --vermelho-preparacao: hsl(332, 51%, 32%);
+    --fonte-titulo: 'Young Serif';
+    --fonte-texto: 'Outfit';
+}
+
+.body {
+    background-color: var(--cor-de-fundo);
+}
+
+.receita {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    border-radius: 25px;
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 3%;
+}
+
+.omelete {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.receita__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--preto-titulo);
+}
+
+.nutricao__descricao,
+.receita__descricao {
+    font-family: var(--fonte-texto);
+    color: var(--cinza-texto);
+}
+
+.receita__tempo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: var(--fonte-texto);
+    color: var(--cinza-texto);
+    background-color: var(--fundo-preparacao);
+    border-radius: 12px;
+    padding: 5%;
+}
+
+.receita__ingredientes ul,
+.receita__tempo ul {
+    list-style-type: none;
+}
+
+.receita__ingredientes li,
+.receita__tempo li {
+    padding-bottom: 5px;
+}
+
+.receita__tempo li::before {
+  content: "•";
+  padding-right: 35px;
+  font-size: 1.5em;
+  color: var(--vermelho-preparacao);
+}
+
+.tempo__titulo {
+    color: var(--vermelho-preparacao);
+}
+
+.instrucoes__titulo,
+.ingredientes__titulo {
+    font-family: var(--fonte-titulo);
+    color: var(--marrom-subtitulo);
+    font-weight: 400;
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
+.receita__instrucoes,
+.receita__ingredientes {
+    font-family: var(--fonte-texto);
+    color: var(--cinza-texto);
+    padding-bottom: 5%;
+    border-bottom: solid 1px var(--cinza-linha);
+}
+
+.receita__ingredientes li::before {
+  content: "•";
+  padding-right: 35px;
+  font-size: 1.5em;
+  color: var(--marrom-subtitulo);
+}
+
+.receita__instrucoes li span {
+    display: block;
+}
+
+.receita__instrucoes ul {
+    list-style-type: none;
+    counter-reset: item;
+}
+
+.receita__instrucoes li {
+    counter-increment: item;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    padding-bottom: 15px;
+}
+
+.receita__instrucoes li::before {
+  content: counter(item) ".";
+  padding-right: 35px;
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--marrom-subtitulo);
+}
+
+.nutricao__titulo {
+    font-family: var(--fonte-titulo);
+    color: var(--marrom-subtitulo);
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.receita__nutricao {
+    font-family: var(--fonte-texto);
+    color: var(--cinza-texto);
+    display: flex;
+}
+
+.nutricao__componentes {
+    display: flex;
+    flex-direction: column;
+}
+
+.nutricao__quantidades {
+    display: flex;
+    flex-direction: column;
+}
+
+.componentes__itens {
+    padding: 12px 212px 12px 30px;
+    border-bottom: solid 1px var(--cinza-linha);
+}
+
+.quantidades__itens {
+    color: var(--marrom-subtitulo);
+    font-weight: bold;
+    padding: 12px 212px 12px 30px;
+    border-bottom: solid 1px var(--cinza-linha);
+}
+
+.componentes__ultimo {
+    padding: 12px 212px 0 30px;
+}
+
+.quantidades__ultimo {
+    color: var(--marrom-subtitulo);
+    font-weight: bold;
+    padding: 12px 212px 0 30px;
+}
